@@ -1,7 +1,7 @@
-import React from 'react'
+import {clubData} from '../data/data.js'
 
 export default function LeaderBoard() {
   return (
-    <div>LeaderBoard</div>
+    <pre>{JSON.stringify(clubData)}</pre>
   )
 }

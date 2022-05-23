@@ -1,4 +1,4 @@
-[
+export const clubData =[
     {
       "amount_raised": 400,
       "amount_matched": 300,
@@ -44,5 +44,5 @@
       "amount_matched": 650,
       "club": "Jemison"
     }
-  ]
+  ];
   
