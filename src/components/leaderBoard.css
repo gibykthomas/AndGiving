@@ -1,8 +1,27 @@
-.userList {
-    flex: 4;
-  }
-  
-  .userListUser {
+
+.userListUser {
     display: flex;
     align-items: center;
-  }
+}
+  
+.userListImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.amountRaised {
+    width: 100%;
+    align-items: center;
+}
+
+.dataGrid{
+    display: flex;
+    align-items: center;
+    height: 400px;
+    width: 75%;
+    margin-left: 10%;
+    margin-top: 10% 
+}
