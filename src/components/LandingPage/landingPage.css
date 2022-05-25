@@ -1,0 +1,76 @@
+.wrapper{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.infoCard{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+.top{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20%;
+}
+
+.wholePage{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: rgb(214, 52, 52);
+    margin: 0;
+    padding: 4rem 6rem;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    margin-left: 4%;
+    margin-bottom: 3%;
+  }
+
+.logo h1{
+    font-size: 180%;
+    color: white;
+    padding-left: 1%;
+    text-shadow: 1px 1px 1px 1px 1px black;
+}
+
+.title{
+    color: white;
+    font-weight: bolder;
+    font-size: 4em;
+}
+
+.top p{
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    color: white;
+}
+
+.learn{
+    width: 25%;
+    color: #005BBB;
+    font-weight: bolder;
+    padding: 2%;
+    /* border: 4px solid yellow; */
+}
+
+.main-img{
+    border-bottom-right-radius: 9%;
+}
+
+.target-label{
+    color: white;
+    margin-left: 4em;
+    margin-top: 1em;
+    font-weight: bolder;
+}
