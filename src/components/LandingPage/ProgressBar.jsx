@@ -1,10 +1,12 @@
-import React from "react";
+import React,{useContext} from "react";
 import './progressBar.css';
 import { clubData } from "../../data/data";
+import { DataContext } from '../../useContext/DataContext';
 
 const ProgressBar = ({ width }) => {
+  const {data, setData}= useContext(DataContext)
   const [value, setValue] = React.useState(0);
-  const ammount = clubData.map(club => club.amount_raised).reduce((prev, curr) => prev + curr, 0);
+  const ammount = data.filter(club => club['Total Raised to-date']).map(club => club['Total Raised to-date']).reduce((prev, curr) => prev + curr, 0);
   const percent = ((10000 / ammount) * 100)
   React.useEffect(() => {
     setValue(percent);
