@@ -11,8 +11,8 @@
     height: 12em;
     border-radius: 1em;
     border: 1em solid rgb(62, 122, 235);;
-    transition: 2.5s ease;
-    transition-delay: 2s;
+    transition: 2s ease;
+    transition-delay: 1s;
     display: flex;
     flex-direction: column;
   }
@@ -25,10 +25,15 @@
       font-weight: bolder;
       font-size: x-large;
       color: white;
+      margin-left: 3rem;
       
   }
   
   .raised-Label{
       color: white;
       font-size: large;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
   }
