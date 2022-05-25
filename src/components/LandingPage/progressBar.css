@@ -1,12 +1,12 @@
 
-.progress-div {
+.whole-progress-bar {
     background-color: yellow;
     border-radius: 1em;
     display: flex;
 
 }
 
-.progress {
+.only-bar {
     background-color: rgb(62, 122, 235);
     height: 12em;
     border-radius: 1em;

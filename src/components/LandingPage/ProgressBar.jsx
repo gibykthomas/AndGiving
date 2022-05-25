@@ -14,8 +14,8 @@ const ProgressBar = ({ width }) => {
     <div className="whole-termo">
       <div className="termo-wrap">
 
-        <div className="progress-div" style={{ width: width }}>
-          <div style={{ width: `${value}px` }} className="progress"><span className="raised-Label">Raised so far</span> <span className="ammount-raised">£{ammount}</span></div>
+        <div className="progress-div whole-progress-bar" style={{ width: width }}>
+          <div style={{ width: `${value}px` }} className="only-bar"><span className="raised-Label">Raised so far</span> <span className="ammount-raised">£{ammount}</span></div>
 
         </div>
 
