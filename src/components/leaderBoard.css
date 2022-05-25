@@ -3,13 +3,41 @@
     display: flex;
     align-items: center;
 }
+.gridHeader{
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    font-size: large;
+}
   
 .userListImg {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
+    border-width: 2px;
     object-fit: cover;
     margin-right: 10px;
+    overflow: hidden
+}
+
+.crownImg {
+    width: 16px;
+    height: 8px;
+    border-radius: 50%;
+    border-width: 2px;
+    object-fit: cover;
+    margin-right: 10px;
+   
+}
+
+.leaderHeading {
+    margin-bottom: 10px;
+}
+
+.rankData {
+    margin-right: 10px;
+    font-weight: bolder;
+    font-size: large;
 }
 
 .amountRaised {
@@ -18,10 +46,16 @@
 }
 
 .dataGrid{
-    display: flex;
+    
     align-items: center;
-    height: 400px;
+    height: 480px;
     width: 75%;
     margin-left: 10%;
     margin-top: 10% 
 }
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

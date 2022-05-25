@@ -1,13 +1,13 @@
 export const clubData =[
     { "id" : 1,
-      "image":"/images/turing.png", 
+      "image":"/images/gladys.png", 
       "amount_raised": 800,
-      "amount_matched": 300,
+      "amount_matched": 650,
       "club": "Gladys"
     },
     {
       "id" : 2,
-      "image":"/images/gladys.png", 
+      "image":"/images/turing.png", 
       "amount_raised": 700,
       "amount_matched": 200,
       "club": "Ada"
