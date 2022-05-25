@@ -1,6 +1,5 @@
 import "./leaderBoard.css";
 import React,{useContext} from "react";
-import {clubData} from '../data/data.js'
 import { DataGrid, GridColDef} from '@mui/x-data-grid';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -46,7 +45,6 @@ const columns: GridColDef[] = [
     //width: 200,
     flex: 3,
     renderCell: (params) => {
-        console.log(params)
         return (
           <div className="amountRaised">
               {params.row.Match_requested}
@@ -58,7 +56,6 @@ const columns: GridColDef[] = [
   { field: 'amount', 
     headerName: 'Badges', 
     headerClassName:'gridHeader',
-    //width: 400,
     flex: 4,
     renderCell: (params) => {
         return (
@@ -103,10 +100,9 @@ function PopulateBadge(prop) {
 }
 
 export default function DataTable() {
-    const {data, setData}= useContext(DataContext)
+    const {data}= useContext(DataContext)
     const sortData = data.sort((a,b) => b.Total_Raised_to_date - a.Total_Raised_to_date)
     const indexeData = sortData.map((item, id) => Object.assign(item, { id }))
-    console.log(indexeData)
     const getRowSpacing = React.useCallback((params: GridRowSpacingParams) => {
         return {
           top: params.isFirstVisible ? 0 : 5,
@@ -119,13 +115,12 @@ export default function DataTable() {
     <div className="dataGrid">
       <h3 className="leaderHeading">Leaderboard</h3>
       <DataGrid
-        rows={data}
+        rows={indexeData}
         columns={columns}
         pageSize={7}
         disableColumnSelector = {true}
         rowsPerPageOptions={[7]}
         getRowSpacing={getRowSpacing}
-        getRowId={(row) => row.Club}
         rowSpacingType="border"
         sx={{ '& .MuiDataGrid-row': { borderTopColor: "lightgray", borderTopStyle: 'solid' } }}
 
