@@ -1,10 +1,14 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './landingPage.css'
 import ProgressBar from './ProgressBar';
 import { NavLink } from 'react-router-dom';
+import { DataContext } from '../../useContext/DataContext';
+
 
 const InfoCard = () => {
+    const {data, setData}= useContext(DataContext)
+
     return (
         <div className="infoCard">
             <div className='top'>
