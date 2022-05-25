@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import LeaderBoard from './components/LeaderBoard';
 import LandingPage from './components/LandingPage/LandingPage.jsx';
-import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 
 function App() {
@@ -18,9 +17,7 @@ function App() {
             return <LeaderBoard />;
           }}
         />
-         {/* <Redirect to="/" /> */}
       </Switch>
-      {/* <LandingPage /> */}
 
     </div>
   );

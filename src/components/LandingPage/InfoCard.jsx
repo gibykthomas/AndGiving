@@ -2,10 +2,8 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './landingPage.css'
 import ProgressBar from './ProgressBar';
-import {NavLink, Link, withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-
-// title and button progress bar
 const InfoCard = () => {
     return (
         <div className="infoCard">
@@ -14,18 +12,11 @@ const InfoCard = () => {
                     Fundraising<br></br>
                     Challenge</h1>
                 <p>Vulputate eu scelerisque felis imperdiet proin fermentum leo. Est lorem ipsum dolor sit. </p>
-            
-                <NavLink
-          data-dd-action-name="home-nav-link"
-          activeClassName="selected"
-          activeStyle={{ textDecoration: "none" }}
-          to="/leaderboard">
-             <button type="button" className="btn btn-light learn">LEARN MORE</button>
 
-        </NavLink>
-            
-                {/* <Link to="/shop"> */}
-                    {/* <button type="button" className="btn btn-light learn">LEARN MORE</button></Link> */}
+                <NavLink className="nav-link" to="/leaderboard">
+                    <button type="button" className="btn btn-light learn">LEARN MORE</button>
+
+                </NavLink>
 
             </div>
             <div className="bottom">
@@ -34,6 +25,7 @@ const InfoCard = () => {
 
                 <h5 className="target-label">Target: £10 000 </h5>
             </div>
+
         </div>
     )
 }
