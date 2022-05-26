@@ -10,6 +10,7 @@ import Logo from "../img/placeholderLogo.png";
 
 const mediumBorder = ["4px solid gold", "4px solid silver", "4px solid brown"];
 const crown = ["gold", "silver", "brown"]
+const badges = ["/images/bronze.png","/images/silver.png","/images/gold.png","/images/platinum.png","/images/diamond.png","/images/king.png"]
 
 
 const columns: GridColDef[] = [
@@ -18,7 +19,7 @@ const columns: GridColDef[] = [
     field: 'club',
     headerName: 'Club',
     headerClassName: 'gridHeader',
-    width: 200,
+    width: 300,
     renderCell: (params) => {
       return (
 
@@ -67,7 +68,7 @@ const columns: GridColDef[] = [
         return (
           <div className="amountRaised">
               {parseInt(params.row.Match_requested)}
-              <ProgressBar variant={params.row.Match_requested < 650 ? "warning":"info"} now={params.row.Match_requested/6.5} label={`${Math.trunc(params.row.Match_requested/6.5)}%`}/>
+              <ProgressBar variant={"progress"} now={params.row.Match_requested/6.5} label={`${Math.trunc(params.row.Match_requested/6.5)}%`}/>
           </div>
         ); }
     
@@ -89,31 +90,54 @@ const columns: GridColDef[] = [
 function PopulateBadge(prop) {
   const amount = prop.val
   switch(true) {
-    case (amount) >=800 :
+    case (amount) >=3500 :
         return (
             <>
-            <img className="userListImg" src="/images/badge.png" alt="" />
-            <img className="userListImg" src="/images/badge.png" alt="" />
-            <img className="userListImg" src="/images/badge.png" alt="" />
-            <img className="userListImg" src="/images/badge.png" alt="" />
-            <img className="userListImg" src="/images/badge.png" alt="" />
+            {badges.slice(0,6).map((badge) => 
+            <img className="userListImg" src={badge} alt="" />
+            )}
             </>
            )
-    case (amount) >=500:
+    case (amount) >=2500:
         return (
             <>
-            <img className="userListImg" src="/images/badge.png" alt="" />
-            <img className="userListImg" src="/images/badge.png" alt="" />
-            <img className="userListImg" src="/images/badge.png" alt="" />
+            {badges.slice(0,5).map((badge) => 
+            <img className="userListImg" src={badge} alt="" />
+            )}
             </>
         )
-    default:
-        return (
-            <>
-            <img className="userListImg" src="/images/badge.png" alt="" />
-            <img className="userListImg" src="/images/badge.png" alt="" />
-            </>
-        )
+    case (amount) >=1400:
+          return (
+              <>
+              {badges.slice(0,4).map((badge) => 
+              <img className="userListImg" src={badge} alt="" />
+              )}
+              </>
+          )
+    case (amount) >=850:
+            return (
+                <>
+                {badges.slice(0,3).map((badge) => 
+                <img className="userListImg" src={badge} alt="" />
+                )}
+                </>
+            )
+      case (amount) >=500:
+              return (
+                  <>
+                  {badges.slice(0,2).map((badge) => 
+                  <img className="userListImg" src={badge} alt="" />
+                  )}
+                  </>
+              )               
+    case (amount) >=250:
+            return (
+                <>
+                {badges.slice(0,1).map((badge) => 
+                <img className="userListImg" src={badge} alt="" />
+                )}
+                </>
+            )         
   }
  
 }

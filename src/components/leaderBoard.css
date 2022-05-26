@@ -4,7 +4,7 @@
     align-items: center;
 }
 .gridHeader{
-    background-color: rgba(255,50,60,255);
+    background-color: #DA2335;
     color: white;
     font-weight: bolder;
     font-size: x-large;
@@ -29,6 +29,10 @@
     margin-right: 10px;
    
 }
+
+.bg-progress{
+    background-color: #DA2335!important;
+  }
 
 .leaderHeading {
     margin-bottom: 10px;
