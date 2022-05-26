@@ -59,11 +59,58 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+
+  }
+
+  .gold-img::before{
+    content: url(../img/gold-crown.png); 
+    margin-left: -45px;
+    margin-top: -90px;
+    margin-bottom: -50px;
+    margin-right: -70px;
+    transform: scale(0.2);
+  }
+
+  .gold-img{
+      margin-top: 2px;
+      margin-left: 25px;
+  }
+
+
+  .silver-img::before{
+    content: url(../img/silver2.png); 
+    margin-left: -3px;
+    margin-top: -90px;
+    margin-bottom: -30px;
+    margin-right: -32px;
+    transform: scale(0.8);
+    max-height: 4px;
+  }
+
+  .silver-img{
+      margin-left: 13px;
+  }
+
+
+  .brown-img::before{
+    content: url(../img/brown-crown.png); 
+    margin-left: -25px;
+    margin-top: -90px;
+    margin-bottom: -35px;
+    margin-right: -50px;
+    transform: scale(0.3);
+    max-height: 4px;
+  
+  }
+
+  .brown-img{
+      margin-left: 15px;
+
 
 .logo-leader{
     margin-left: 9%;
     margin-right: 80%;
     margin-bottom: 3%;
     object-fit: cover;
+
   }

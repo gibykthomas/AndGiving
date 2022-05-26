@@ -18,7 +18,7 @@ const InfoCard = () => {
                 <p>Vulputate eu scelerisque felis imperdiet proin fermentum leo. Est lorem ipsum dolor sit. </p>
 
                 <NavLink className="nav-link" to="/leaderboard">
-                    <button type="button" className="btn btn-light learn">LEARN MORE</button>
+                    <button type="button" className="btn btn-light learn">VIEW LEADERBOARD</button>
 
                 </NavLink>
 

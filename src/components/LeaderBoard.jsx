@@ -8,29 +8,41 @@ import axios from "axios";
 import { NavLink } from 'react-router-dom';
 import Logo from "../img/placeholderLogo.png";
 
-const mediumBorder = ["4px solid gold", "4px solid silver", "4px solid brown"];
+const mediumBorder = ["", "4px solid gold", "4px solid silver", "4px solid brown"];
+const crown = ["gold", "silver", "brown"]
+
 
 const columns: GridColDef[] = [
-  
-  { field: 'Club', 
-    headerName: 'Club', 
-    headerClassName:'gridHeader',
-    flex: 3,
-    renderCell: (params) => {
-      const id = params.row.id + 1
-        return (
 
-         <>
-         <div className= "rankData">{id}  </div> 
-          <div className="userListUser">
-              <img style={{
-              border:
-              params.row.id < 3 ? mediumBorder[params.row.id] : ""
-            }} className="userListImg" src={params.row.image} alt="" />
+  {
+    field: 'club',
+    headerName: 'Club',
+    headerClassName: 'gridHeader',
+    width: 200,
+    renderCell: (params) => {
+      return (
+
+        <>
+          <div className="rankData">{params.row.id}  </div>
+          <div className=
+            {params.row.id <= 3 ? `${crown[params.row.id - 1]}-img userListUser` :
+              "userListUser"
+            }
+          >
+            <div className="image-name">
+              <img className="userListImg"
+                style={{
+                  border:
+                    params.row.id <= 3 ? mediumBorder[params.row.id] : ""
+                }} src={params.row.image} alt="" />
             {params.row.Club}
+            </div>
           </div>
-          </>
-        ); }},
+        </>
+      );
+    }
+  },
+
   { field: 'Total_Raised_to_date', 
     headerName: 'Amount Raised(£)', 
     headerClassName:'gridHeader',
