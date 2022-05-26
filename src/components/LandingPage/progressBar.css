@@ -1,39 +1,56 @@
-
 .whole-progress-bar {
     background-color: yellow;
     border-radius: 1em;
     display: flex;
+    margin-top: 4em;
 
 }
 
 .only-bar {
     background-color: rgb(62, 122, 235);
-    height: 12em;
+    height: 9em;
     border-radius: 1em;
-    border: 1em solid rgb(62, 122, 235);;
+    border: 1em solid rgb(62, 122, 235);
     transition: 2s ease;
     transition-delay: 1s;
     display: flex;
     flex-direction: column;
-  }
+}
 
-  .whole-termo{
-      max-width: 20em;
-  }
+.whole-termo {
+    max-width: 20em;
+}
 
-  .ammount-raised{
-      font-weight: bolder;
-      font-size: x-large;
-      color: white;
-      margin-left: 3rem;
-      
-  }
-  
-  .raised-Label{
-      color: white;
-      font-size: large;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 2rem;
+.ammount-raised {
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: xx-large;
+    color: white;
+    animation: hideAnimation 0s ease-in 2s;
+    animation-fill-mode: forwards;
+}
+
+.raised-Label {
+    color: white;
+    visibility: hidden;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    font-weight: 400;
+    transition: 2s ease;
+    transition-delay: 1s;
+    animation: hideAnimation 0s ease-in 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideAnimation {
+    to {
+      visibility:visible;
+   
+    }
   }
