@@ -8,7 +8,7 @@ import axios from "axios";
 import { NavLink } from 'react-router-dom';
 import Logo from "../img/placeholderLogo.png";
 
-const mediumBorder = ["", "4px solid gold", "4px solid silver", "4px solid brown"];
+const mediumBorder = ["4px solid gold", "4px solid silver", "4px solid brown"];
 const crown = ["gold", "silver", "brown"]
 
 
@@ -23,9 +23,9 @@ const columns: GridColDef[] = [
       return (
 
         <>
-          <div className="rankData">{params.row.id}  </div>
+          <div className="rankData">{params.row.id + 1}  </div>
           <div className=
-            {params.row.id <= 3 ? `${crown[params.row.id - 1]}-img userListUser` :
+            {params.row.id <= 3 ? `${crown[params.row.id]}-img userListUser` :
               "userListUser"
             }
           >
