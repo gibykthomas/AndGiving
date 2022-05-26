@@ -11,6 +11,7 @@ const ProgressBar = ({ width }) => {
   const percentForBar = ((percent /100 )* 18) 
   React.useEffect(() => {
     setValue(percentForBar);
+    console.log(value)
   });
 
   return (

@@ -38,7 +38,7 @@ const LandingPage = () => {
             </NavLink>
             <div className="wrapper">
                 <InfoCard />
-                <img src={charityimg} className="main-img" alt="Charity img" width="45%" height="50%" />
+                <img src={charityimg} className="main-img" alt="Charity img" />
 
             </div>
         </div>
