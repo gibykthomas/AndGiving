@@ -16,7 +16,7 @@ const badges = ["/images/bronze.png","/images/silver.png","/images/gold.png","/i
 const columns: GridColDef[] = [
 
   {
-    field: 'club',
+    field: 'Club',
     headerName: 'Club',
     headerClassName: 'gridHeader',
     width: 300,
