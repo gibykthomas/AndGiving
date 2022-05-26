@@ -34,7 +34,7 @@
 .logo{
     display: flex;
     flex-direction: row;
-    margin-left: 11%;
+    margin-left: 9%;
     margin-bottom: 3%;
   }
 
@@ -70,10 +70,14 @@
     text-align: center;
 }
 
+a.nav-link .learn{
+    margin-left: -13px;
+}
+
 .main-img{
     border-bottom-right-radius: 9%;
-    max-height: 70vh;
-    max-width: 60vh;;
+    max-height: 75vh;
+    max-width: 65vh;;
 }
 
 .target-label{
