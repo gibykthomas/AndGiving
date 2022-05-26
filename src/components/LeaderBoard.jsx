@@ -4,10 +4,11 @@ import { DataGrid, GridColDef} from '@mui/x-data-grid';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DataContext } from '../useContext/DataContext';
+import axios from "axios";
+import { NavLink } from 'react-router-dom';
+import Logo from "../img/placeholderLogo.png";
 
 const mediumBorder = ["4px solid gold", "4px solid silver", "4px solid brown"];
-
-
 
 const columns: GridColDef[] = [
   
@@ -31,23 +32,29 @@ const columns: GridColDef[] = [
           </>
         ); }},
   { field: 'Total_Raised_to_date', 
-    headerName: 'Amount Raised', 
+    headerName: 'Amount Raised(£)', 
     headerClassName:'gridHeader',
-    //width: 400,
     flex: 3,
+    renderCell: (params) => {
+      return (
+        <>
+            {parseInt(params.row.Total_Raised_to_date.replace(',',''))}
+        </>    
+            
+      ); 
+    }
     
  },
  
  {
     field: 'Match_requested',
-    headerName: 'Amount Matched',
+    headerName: 'Amount Matched(£)',
     headerClassName:'gridHeader',
-    //width: 200,
     flex: 3,
     renderCell: (params) => {
         return (
           <div className="amountRaised">
-              {params.row.Match_requested}
+              {parseInt(params.row.Match_requested)}
               <ProgressBar variant={params.row.Match_requested < 650 ? "warning":"info"} now={params.row.Match_requested/6.5} label={`${Math.trunc(params.row.Match_requested/6.5)}%`}/>
           </div>
         ); }
@@ -60,7 +67,7 @@ const columns: GridColDef[] = [
     renderCell: (params) => {
         return (
           <div className="amountRaised">
-              <PopulateBadge val={params.row.Total_Raised_to_date }/>
+              <PopulateBadge val={params.row.Total_Raised_to_date.replace(',','') }/>
           </div>
         ); }
     
@@ -68,9 +75,9 @@ const columns: GridColDef[] = [
 ];
 
 function PopulateBadge(prop) {
-    
+  const amount = prop.val
   switch(true) {
-    case (prop.val) >=800 :
+    case (amount) >=800 :
         return (
             <>
             <img className="userListImg" src="/images/badge.png" alt="" />
@@ -80,7 +87,7 @@ function PopulateBadge(prop) {
             <img className="userListImg" src="/images/badge.png" alt="" />
             </>
            )
-    case (prop.val) >=500:
+    case (amount) >=500:
         return (
             <>
             <img className="userListImg" src="/images/badge.png" alt="" />
@@ -100,9 +107,25 @@ function PopulateBadge(prop) {
 }
 
 export default function DataTable() {
-    const {data}= useContext(DataContext)
-    const sortData = data.sort((a,b) => b.Total_Raised_to_date - a.Total_Raised_to_date)
+    const {data,setData}= useContext(DataContext)
+    const sortData = data.sort((a,b) => b.Total_Raised_to_date.replace(',','') - a.Total_Raised_to_date.replace(',',''))
     const indexeData = sortData.map((item, id) => Object.assign(item, { id }))
+    
+    React.useEffect(() => {
+      if(data.length ===0) {
+        axios.get(`https://sheet.best/api/sheets/a958d2bd-fe72-483c-a828-941c3563df09`)
+            .then(res => {
+                const clubData = res.data;
+                setData(clubData)
+            })
+            .catch((error) => {
+                console.warn('Error fetching data: ', error)
+                this.setState({
+                    error: `There was an error fetching the club data.`
+                })
+            })
+      } 
+    }, []);
     const getRowSpacing = React.useCallback((params: GridRowSpacingParams) => {
         return {
           top: params.isFirstVisible ? 0 : 5,
@@ -111,15 +134,22 @@ export default function DataTable() {
       }, []);  
       
   return (
-    
+    <>
+    <NavLink className="nav-link" to="/">
+
+        <div className="logo-leader">
+          <img src={Logo} alt="Charity img" width="40%"/>
+        </div>
+    </NavLink>
     <div className="dataGrid">
+      
       <h3 className="leaderHeading">Leaderboard</h3>
       <DataGrid
         rows={indexeData}
         columns={columns}
-        pageSize={7}
+        pageSize={9}
         disableColumnSelector = {true}
-        rowsPerPageOptions={[7]}
+        rowsPerPageOptions={[9]}
         getRowSpacing={getRowSpacing}
         rowSpacingType="border"
         sx={{ '& .MuiDataGrid-row': { borderTopColor: "lightgray", borderTopStyle: 'solid' } }}
@@ -128,5 +158,6 @@ export default function DataTable() {
       />
       
     </div>
+    </>
   );
 }

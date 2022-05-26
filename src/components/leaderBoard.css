@@ -4,10 +4,10 @@
     align-items: center;
 }
 .gridHeader{
-    background-color: red;
+    background-color: rgba(255,50,60,255);
     color: white;
     font-weight: bolder;
-    font-size: large;
+    font-size: x-large;
 }
   
 .userListImg {
@@ -34,6 +34,7 @@
     margin-bottom: 10px;
 }
 
+
 .rankData {
     margin-right: 10px;
     font-weight: bolder;
@@ -48,14 +49,21 @@
 .dataGrid{
     
     align-items: center;
-    height: 480px;
+    height: 600px;
     width: 75%;
     margin-left: 10%;
-    margin-top: 10% 
+    margin-top: 2% 
 }
 
 .flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.logo-leader{
+    margin-left: 9%;
+    margin-right: 80%;
+    margin-bottom: 3%;
+    object-fit: cover;
   }
