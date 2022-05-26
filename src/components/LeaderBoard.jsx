@@ -1,7 +1,6 @@
 import "./leaderBoard.css";
 import React,{useContext} from "react";
-import { clubData } from '../data/data.js'
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef} from '@mui/x-data-grid';
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DataContext } from '../useContext/DataContext';
@@ -43,6 +42,7 @@ const columns: GridColDef[] = [
       );
     }
   },
+
   { field: 'Total_Raised_to_date', 
     headerName: 'Amount Raised(£)', 
     headerClassName:'gridHeader',
