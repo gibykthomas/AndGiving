@@ -1,88 +1,17 @@
-.wrapper{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin: 1em 5em;
-}
-
-.infoCard{
-    display: flex;
-    flex-direction: column;
-    max-height: 70vh;
-    max-width: 60vh;
-    
-}
-
-.top{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10%;
-}
-
-.wholePage{
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
+.whole-page {
     background-color: #DA2335;
-    margin: 0px;
-    padding: 2rem 4rem 9rem 4rem;
-    /* max-height: 65vh; */
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
 }
 
-.logo{
+.wrapper {
     display: flex;
     flex-direction: row;
-    margin-left: 9%;
-    margin-bottom: 3%;
-  }
-
-.logo h1{
-    font-size: 2em;
-    color: white;
-    padding-left: 0.5%;
-    
-    font-weight: 600;
-}
-
-.title{
-    color: white;
-    font-weight: 600;
-    font-size: 64px;
-    
-}
-
-.top p{
-    display: flex;
     flex-wrap: wrap;
-    width: 70%;
-    color: white;
-    font-weight: 300;
-    font-size: 16px;
-}
-
-.learn{
-    width: 50%;
-    color: #005BBB;
-    font-weight: 700;
-    padding: 1em 0em;
-    text-align: center;
-}
-
-a.nav-link .learn{
-    margin-left: -13px;
-}
-
-.main-img{
-    border-bottom-right-radius: 9%;
-    max-height: 75vh;
-    max-width: 65vh;;
-}
-
-.target-label{
-    color: white;
-    margin-left: 4em;
-    margin-top: 1em;
-    font-weight: bolder;
+    align-content: space-between;
+    max-height: 0%;
+    padding: 0 0 10% 0;
 }

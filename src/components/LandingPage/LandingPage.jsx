@@ -1,8 +1,7 @@
-import React,{useContext} from "react";
-import InfoCard from './InfoCard.jsx';
-import charityimg from "../../img/Mask Group.jpg";
-import placeholderLogo from "../../img/placeholderLogo.png";
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from "react";
+import InfoCard from '../LandingPage/InfoCard/InfoCard.jsx';
+import Logo from '../../components/Logo/Logo.jsx';
+import ImageCard from '../LandingPage/ImageCard/ImageCard.jsx';
 import './landingPage.css';
 import axios from "axios";
 import { DataContext } from '../../useContext/DataContext';
@@ -11,7 +10,7 @@ import { DataContext } from '../../useContext/DataContext';
 
 const LandingPage = () => {
 
-    const {data, setData}= useContext(DataContext)
+    const { setData } = useContext(DataContext)
 
     React.useEffect(() => {
         axios.get(`https://sheet.best/api/sheets/a958d2bd-fe72-483c-a828-941c3563df09`)
@@ -25,21 +24,16 @@ const LandingPage = () => {
                     error: `There was an error fetching the repositories.`
                 })
             })
-      }, []);
+    });
 
     return (
-        <div className="wholePage">
-            <NavLink className="nav-link" to="/">
-
-                <div className="logo">
-                    <img src={placeholderLogo} alt="Charity img" width="8%" height="8%" />
-                    <h1>Digital</h1>
+        <div className="whole-page container-fluid">
+                <Logo />
+            <div className="container">
+                <div className="wrapper row g-3">
+                    <InfoCard />
+                    <ImageCard />
                 </div>
-            </NavLink>
-            <div className="wrapper">
-                <InfoCard />
-                <img src={charityimg} className="main-img" alt="Charity img" />
-
             </div>
         </div>
     )
