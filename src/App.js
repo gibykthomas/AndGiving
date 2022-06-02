@@ -6,20 +6,20 @@ import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='app'>
-      <Switch>
-        <Route exact path="/" component={LandingPage} />
+     <div className='app'>
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
 
-        <Route
-          exact
-          path="/leaderboard"
-          render={() => {
-            return <LeaderBoard />;
-          }}
-        />
-      </Switch>
+          <Route
+            exact
+            path="/leaderboard"
+            render={() => {
+              return <LeaderBoard />;
+            }}
+          />
+        </Switch>
+      </div>
 
-    </div>
   );
 }
 
