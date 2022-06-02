@@ -1,0 +1,60 @@
+.info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: space-between;
+    max-width: 100%;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.top p {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    color: white;
+    font-weight: 300;
+    font-size: 100%;
+}
+
+.title {
+    color: white;
+    font-weight: 600;
+    font-size: 260%;
+}
+
+.to-leaderboard {
+    min-width: 30%;
+    color: #005BBB;
+    font-weight: 700;
+    padding: 1em 1em;
+    text-align: center;
+
+}
+
+a.nav-link {
+    margin-left: -13px;
+}
+
+.target-label {
+    color: white;
+    min-width: 100%;
+    padding-left: 10%;
+    margin-top: 1em;
+    font-weight: bolder;
+    align-content: center;
+}
+
+.bottom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: end;
+}
