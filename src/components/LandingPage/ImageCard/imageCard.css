@@ -1,0 +1,11 @@
+.img-div {
+    max-width: 100%;
+    display: flex;
+    justify-content: start;
+
+}
+
+.main-img {
+    border-bottom-right-radius: 9%;
+    width: 90%;
+}
