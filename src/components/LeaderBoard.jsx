@@ -5,8 +5,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { DataContext } from '../useContext/DataContext';
 import axios from "axios";
-import { NavLink } from 'react-router-dom';
-import Logo from "../img/placeholderLogo.png";
+import Logo from "../components/Logo/Logo.jsx"
 
 const mediumBorder = ["4px solid gold", "4px solid silver", "4px solid brown"];
 const crown = ["gold", "silver", "brown"]
@@ -170,14 +169,9 @@ export default function DataTable() {
       }, []);  
       
   return (
-    <>
-    <NavLink className="nav-link" to="/">
-
-        <div className="logo-leader">
-          <img src={Logo} alt="Charity img" width="40%"/>
-        </div>
-    </NavLink>
-    <div className="dataGrid">
+    <div className="container  learderboard-page">
+   <Logo />
+    <div className="dataGrid container">
       
       <h3 className="leaderHeading">Leaderboard</h3>
       <DataGrid
@@ -194,6 +188,6 @@ export default function DataTable() {
       />
       
     </div>
-    </>
+    </div>
   );
 }
