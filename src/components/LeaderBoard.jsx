@@ -148,7 +148,7 @@ export default function DataTable() {
     
     React.useEffect(() => {
       if(data.length ===0) {
-        axios.get(`https://sheet.best/api/sheets/a958d2bd-fe72-483c-a828-941c3563df09`)
+        axios.get(`https://sheet.best/api/sheets/7deab1e4-fab8-4cb2-9fdd-8c2a1f72cfe3`)
             .then(res => {
                 const clubData = res.data;
                 setData(clubData)
