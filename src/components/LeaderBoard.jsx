@@ -147,8 +147,9 @@ export default function DataTable() {
     const indexeData = sortData.map((item, id) => Object.assign(item, { id }))
     
     React.useEffect(() => {
+      console.log("data")
       if(data.length ===0) {
-        axios.get(`https://sheet.best/api/sheets/7deab1e4-fab8-4cb2-9fdd-8c2a1f72cfe3`)
+        axios.get(`https://sheet.best/api/sheets/50844152-1af7-4317-97b4-2427ed65e8c5`)
             .then(res => {
                 const clubData = res.data;
                 setData(clubData)

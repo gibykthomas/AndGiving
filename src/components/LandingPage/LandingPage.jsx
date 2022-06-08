@@ -10,10 +10,11 @@ import { DataContext } from '../../useContext/DataContext';
 
 const LandingPage = () => {
 
-    const { setData } = useContext(DataContext)
+    const { data,setData } = useContext(DataContext)
 
     React.useEffect(() => {
-        axios.get(`https://sheet.best/api/sheets/7deab1e4-fab8-4cb2-9fdd-8c2a1f72cfe3`)
+        console.log("hello")
+        axios.get(`https://sheet.best/api/sheets/fc58725a-51b3-4d04-9d06-85941fa388ed`)
             .then(res => {
                 const clubData = res.data;
                 setData(clubData)
@@ -24,7 +25,7 @@ const LandingPage = () => {
                     error: `There was an error fetching the repositories.`
                 })
             })
-    });
+    },[]);
 
     return (
         <div className="whole-page container-fluid">
