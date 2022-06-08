@@ -13,7 +13,6 @@ const LandingPage = () => {
     const { data,setData } = useContext(DataContext)
 
     React.useEffect(() => {
-        console.log("hello")
         axios.get(`https://sheet.best/api/sheets/fc58725a-51b3-4d04-9d06-85941fa388ed`)
             .then(res => {
                 const clubData = res.data;
