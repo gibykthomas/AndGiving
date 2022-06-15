@@ -13,7 +13,7 @@ const LandingPage = () => {
     const { data,setData } = useContext(DataContext)
 
     React.useEffect(() => {
-        axios.get(`https://sheet.best/api/sheets/fc58725a-51b3-4d04-9d06-85941fa388ed`)
+        axios.get(`https://sheet.best/api/sheets/87f43c47-3c43-4941-a9b2-f0569dafc098`)
             .then(res => {
                 const clubData = res.data;
                 setData(clubData)
