@@ -14,7 +14,7 @@ const InfoCard = () => {
                 <h1 className='title'>242 <br></br>
                     Fundraising<br></br>
                     Challenge</h1>
-                <p>Vulputate eu scelerisque felis imperdiet proin fermentum leo. Est lorem ipsum dolor sit. </p>
+                <p>We’re aiming to raise up to £20,000 to support people impacted by the invasion of Ukraine. </p>
 
                 <NavLink className="nav-link" to="/leaderboard">
                     <button type="button" className="btn btn-light to-leaderboard">VIEW LEADERBOARD</button>
